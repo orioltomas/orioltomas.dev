@@ -1,0 +1,29 @@
+---
+import { copy } from '../data/copy';
+import { site, type Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+  class?: string;
+}
+const { locale, class: className } = Astro.props;
+const t = copy[locale];
+---
+
+<!-- Assembled at runtime so the address is not sitting in the HTML for scrapers. -->
+<a
+  class:list={['email', className]}
+  href="#contact"
+  data-email-user={site.email.user}
+  data-email-domain={site.email.domain}
+>
+  {t.ui.emailFallback}
+</a>
+
+<script>
+  document.querySelectorAll<HTMLAnchorElement>('[data-email-user]').forEach((link) => {
+    const address = `${link.dataset.emailUser}@${link.dataset.emailDomain}`;
+    link.href = `mailto:${address}`;
+    link.textContent = address;
+  });
+</script>

@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import Nav from './Nav.astro';
+import Hero from './Hero.astro';
+import Work from './Work.astro';
+import Stack from './Stack.astro';
+import Education from './Education.astro';
+import Contact from './Contact.astro';
+import type { Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+
+<Base locale={locale}>
+  <Nav locale={locale} />
+  <main class="shell" id="main">
+    <Hero locale={locale} />
+    <Work locale={locale} />
+    <Stack locale={locale} />
+    <Education locale={locale} />
+    <Contact locale={locale} />
+  </main>
+</Base>

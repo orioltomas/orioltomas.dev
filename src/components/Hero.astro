@@ -1,0 +1,84 @@
+---
+import Email from './Email.astro';
+import { copy } from '../data/copy';
+import type { Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = copy[locale];
+---
+
+<header class="hero">
+  <p class="kicker">{t.hero.kicker}</p>
+
+  <h1 class="hero__name">
+    Oriol Tomàs<br /><em>Fortuny</em>
+  </h1>
+
+  <p class="hero__role">
+    {t.hero.role} <span>{t.hero.roleTail}</span>
+  </p>
+
+  <p class="hero__intro">{t.hero.intro}</p>
+
+  <div class="hero__cta no-print">
+    <button class="btn" type="button" data-print>{t.hero.cv}</button>
+    <Email locale={locale} class="btn btn--ghost" />
+  </div>
+</header>
+
+<style>
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding-block: clamp(40px, 8vw, 68px) clamp(34px, 6vw, 50px);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .hero__name {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(46px, 11vw, 96px);
+    line-height: 0.94;
+    letter-spacing: -0.028em;
+    margin: 0;
+  }
+
+  .hero__name em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero__role {
+    margin: 0;
+    font-size: clamp(16.5px, 2.2vw, 19px);
+    max-width: 40ch;
+  }
+
+  .hero__role span {
+    color: var(--mid);
+  }
+
+  .hero__intro {
+    margin: 0;
+    max-width: var(--measure);
+    color: var(--mid);
+    font-size: 15.5px;
+  }
+
+  .hero__cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 6px;
+  }
+</style>
+
+<script>
+  document
+    .querySelector<HTMLButtonElement>('[data-print]')
+    ?.addEventListener('click', () => window.print());
+</script>

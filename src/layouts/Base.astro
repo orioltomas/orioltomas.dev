@@ -1,0 +1,81 @@
+---
+import '@fontsource-variable/newsreader/wght.css';
+import '@fontsource-variable/newsreader/wght-italic.css';
+// Latin subsets only — Catalan needs latin-ext, the rest is dead weight.
+import '@fontsource/ibm-plex-sans/latin-400.css';
+import '@fontsource/ibm-plex-sans/latin-ext-400.css';
+import '@fontsource/ibm-plex-sans/latin-600.css';
+import '@fontsource/ibm-plex-sans/latin-ext-600.css';
+import '@fontsource/ibm-plex-mono/latin-400.css';
+import '@fontsource/ibm-plex-mono/latin-ext-400.css';
+import '@fontsource/ibm-plex-mono/latin-500.css';
+import '@fontsource/ibm-plex-mono/latin-ext-500.css';
+import '../styles/global.css';
+
+import { site, localePath, type Locale } from '../data/site';
+import { copy } from '../data/copy';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = copy[locale];
+const canonical = new URL(localePath[locale], site.url).href;
+
+const personLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: site.name,
+  url: site.url,
+  jobTitle: 'Frontend Tech Lead',
+  worksFor: { '@type': 'Organization', name: 'PDPAOLA Jewelry' },
+  address: { '@type': 'PostalAddress', addressLocality: 'Barcelona', addressCountry: 'ES' },
+  sameAs: [site.github, site.linkedin],
+  knowsLanguage: ['ca', 'es', 'en'],
+  alumniOf: [
+    { '@type': 'CollegeOrUniversity', name: 'Universitat Pompeu Fabra' },
+    { '@type': 'CollegeOrUniversity', name: 'Universitat Politècnica de Catalunya' },
+  ],
+};
+---
+
+<!doctype html>
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>{t.meta.title}</title>
+    <meta name="description" content={t.meta.description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={new URL('/', site.url).href} />
+    <link rel="alternate" hreflang="ca" href={new URL('/ca/', site.url).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', site.url).href} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={t.meta.title} />
+    <meta property="og:description" content={t.meta.description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={locale === 'ca' ? 'ca_ES' : 'en_GB'} />
+    <meta name="twitter:card" content="summary" />
+    <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
+    <script is:inline>
+      (() => {
+        try {
+          const saved = localStorage.getItem('theme');
+          if (saved === 'light' || saved === 'dark') {
+            document.documentElement.dataset.theme = saved;
+          }
+        } catch (_) {
+          /* private mode: fall back to the OS preference */
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip no-print" href="#main">{t.ui.skip}</a>
+    <slot />
+  </body>
+</html>

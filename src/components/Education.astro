@@ -1,0 +1,67 @@
+---
+import { copy } from '../data/copy';
+import type { Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = copy[locale];
+---
+
+<section class="section" id="education">
+  <h2 class="section__title">{t.sections.education}</h2>
+
+  <ul class="degrees">
+    {t.education.degrees.map((degree) => <li>{degree}</li>)}
+  </ul>
+
+  <figure class="feature">
+    <figcaption class="feature__label">{t.education.label}</figcaption>
+    <blockquote class="feature__quote">{t.education.quote}</blockquote>
+    <p class="feature__meta">{t.education.meta}</p>
+  </figure>
+</section>
+
+<style>
+  .degrees {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .degrees li {
+    padding-block: 13px;
+    border-top: 1px solid var(--rule);
+    font-size: 14.5px;
+  }
+
+  .feature {
+    margin: 24px 0 0;
+    padding: clamp(22px, 4vw, 32px);
+    background: var(--veil);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .feature__label,
+  .feature__meta {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.05em;
+    color: var(--mid);
+    margin: 0;
+  }
+
+  .feature__quote {
+    margin: 0;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(20px, 3.4vw, 27px);
+    line-height: 1.28;
+    max-width: 40ch;
+    text-wrap: balance;
+  }
+</style>

@@ -1,0 +1,39 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base locale="en">
+  <main class="shell lost" id="main">
+    <p class="kicker">Error 404</p>
+    <h1>This page does not exist</h1>
+    <p class="lost__links">
+      <a class="link" href="/">Back to the start</a>
+      <a class="link" href="/ca/">Torna a l&rsquo;inici</a>
+    </p>
+  </main>
+</Base>
+
+<style>
+  .lost {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-block: clamp(70px, 18vh, 160px);
+  }
+
+  .lost h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(34px, 7vw, 58px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+  }
+
+  .lost__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin: 10px 0 0;
+  }
+</style>

@@ -1,0 +1,59 @@
+---
+import { copy } from '../data/copy';
+import type { Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = copy[locale];
+---
+
+<section class="section" id="stack">
+  <h2 class="section__title">{t.sections.stack}</h2>
+
+  <dl class="stack">
+    {
+      t.stack.map((row) => (
+        <div class="stack__row">
+          <dt>{row.label}</dt>
+          <dd>{row.items}</dd>
+        </div>
+      ))
+    }
+  </dl>
+</section>
+
+<style>
+  .stack {
+    margin: 0;
+  }
+
+  .stack__row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4px 26px;
+    padding-block: 15px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .stack__row dt {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    padding-top: 3px;
+  }
+
+  .stack__row dd {
+    margin: 0;
+    font-size: 14.5px;
+  }
+
+  @media (min-width: 640px) {
+    .stack__row {
+      grid-template-columns: var(--gutter) 1fr;
+    }
+  }
+</style>
