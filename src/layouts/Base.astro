@@ -21,13 +21,15 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = copy[locale];
-const canonical = new URL(localePath[locale], site.url).href;
+// Single source of truth for the domain: `site` in astro.config.mjs.
+const origin = Astro.site ?? new URL('https://orioltomas.dev');
+const canonical = new URL(localePath[locale], origin).href;
 
 const personLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: site.name,
-  url: site.url,
+  url: origin.href,
   jobTitle: 'Frontend Tech Lead',
   worksFor: { '@type': 'Organization', name: 'PDPAOLA Jewelry' },
   address: { '@type': 'PostalAddress', addressLocality: 'Barcelona', addressCountry: 'ES' },
@@ -50,9 +52,10 @@ const personLd = {
     <title>{t.meta.title}</title>
     <meta name="description" content={t.meta.description} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="en" href={new URL('/', site.url).href} />
-    <link rel="alternate" hreflang="ca" href={new URL('/ca/', site.url).href} />
-    <link rel="alternate" hreflang="x-default" href={new URL('/', site.url).href} />
+    <link rel="alternate" hreflang="ca" href={new URL('/', origin).href} />
+    <link rel="alternate" hreflang="en" href={new URL('/en/', origin).href} />
+    <!-- Visitors whose language matches neither get English, not Catalan. -->
+    <link rel="alternate" hreflang="x-default" href={new URL('/en/', origin).href} />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta property="og:type" content="profile" />
     <meta property="og:title" content={t.meta.title} />

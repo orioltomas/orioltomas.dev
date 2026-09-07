@@ -1,6 +1,6 @@
-# tomasfortuny.com
+# orioltomas.dev
 
-Personal site and CV for Oriol Tomàs Fortuny. Static, built with Astro, English and Catalan.
+Personal site and CV for Oriol Tomàs Fortuny. Static, built with Astro, Catalan and English.
 
 ## Commands
 
@@ -19,8 +19,8 @@ npm run preview  # serve the build locally
 | `src/data/copy.ts` | Every readable string, in `en` and `ca` |
 | `src/styles/global.css` | Design tokens, both themes, print stylesheet |
 | `src/components/` | Nav, Hero, Work, Stack, Education, Contact |
-| `src/pages/index.astro` | English, served at `/` |
-| `src/pages/ca/index.astro` | Catalan, served at `/ca/` |
+| `src/pages/index.astro` | Catalan, served at `/` |
+| `src/pages/en/index.astro` | English, served at `/en/` |
 
 To edit the CV, touch `cv.ts` (dates) and `copy.ts` (words). The components do not
 contain content.
@@ -37,27 +37,44 @@ value before first paint so the page never flashes the wrong theme.
 `global.css` — navigation, buttons and the footer note drop out, links print their URLs.
 There is no separate PDF file to keep in sync.
 
-## Deploying
+## Languages
 
-`npm run build` produces a plain static `dist/`. Netlify, Cloudflare Pages, Vercel and
-GitHub Pages all take it as is:
+Catalan is the primary language and sits at the root; English lives at `/en/`. The pair is
+declared once in `astro.config.mjs` (`i18n.defaultLocale`) and once in `src/data/site.ts`
+(`localePath` and `altLocale`, which drive the header switch and the `hreflang` tags).
 
-- **Build command:** `npm run build`
-- **Publish directory:** `dist`
-- **Node:** 22 or newer
+`hreflang="x-default"` points at the English page on purpose: a visitor whose language
+matches neither should land on English, not Catalan.
+
+## Deploying to Cloudflare Pages
+
+Connect the repository in the Cloudflare dashboard, then:
+
+| Setting | Value |
+| --- | --- |
+| Framework preset | Astro |
+| Build command | `npm run build` |
+| Output directory | `dist` |
+| Environment variable | `SITE_URL = https://orioltomas.dev` |
+
+`.node-version` pins Node 22, so the build image does not pick something older.
+
+`public/_headers` ships the security headers and marks `/_astro/*` immutable — Cloudflare
+reads it straight out of the build output.
+
+The apex is what the site is served from. Add a Cloudflare **Redirect Rule** for
+`www.orioltomas.dev/*` → `https://orioltomas.dev/$1` (301); `_headers` cannot do
+cross-hostname redirects.
 
 ### Changing the domain
 
-The canonical URL, the `hreflang` tags, the sitemap and `robots.txt` all read from a
-single value: `site` in `astro.config.mjs`, which defaults to `https://tomasfortuny.com`.
-Set `SITE_URL` in the host's build environment to point everything somewhere else without
-touching the code:
+The canonical URL, the `hreflang` tags, the sitemap and `robots.txt` all read from one
+value: `site` in `astro.config.mjs`, which defaults to `https://orioltomas.dev` and is
+overridden by `SITE_URL`. Nothing else in the codebase hardcodes the domain.
 
 ```bash
-SITE_URL=https://orioltomas.dev npm run build
+SITE_URL=https://example.test npm run build
 ```
-
-`src/pages/robots.txt.ts` and the sitemap regenerate from that value on every build.
 
 ## Not on this site, on purpose
 
