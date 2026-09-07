@@ -80,7 +80,10 @@ const en: Copy = {
     { label: 'Frontend', items: 'Nuxt · Vue.js · TypeScript · JavaScript · HTML & CSS' },
     { label: 'Backend', items: 'PHP · Laravel · GraphQL · Symfony' },
     { label: 'Data & messaging', items: 'MongoDB · MySQL · RabbitMQ' },
-    { label: 'Team', items: 'Technical leadership · Scrum · Project management · Jira' },
+    {
+      label: 'Leadership',
+      items: 'Technical leadership · Technical debt management · Technical roadmap · Scrum',
+    },
     { label: 'Earlier', items: 'Pimcore · Drupal · Python & Django · Server configuration' },
   ],
   education: {
@@ -164,7 +167,10 @@ const ca: Copy = {
     { label: 'Frontend', items: 'Nuxt · Vue.js · TypeScript · JavaScript · HTML i CSS' },
     { label: 'Backend', items: 'PHP · Laravel · GraphQL · Symfony' },
     { label: 'Dades i cues', items: 'MongoDB · MySQL · RabbitMQ' },
-    { label: 'Equip', items: 'Lideratge tècnic · Scrum · Gestió de projectes · Jira' },
+    {
+      label: 'Lideratge',
+      items: 'Lideratge tècnic · Gestió de deute tècnic · Roadmap tècnic · Scrum',
+    },
     { label: 'Abans', items: 'Pimcore · Drupal · Python i Django · Configuració de servidors' },
   ],
   education: {
