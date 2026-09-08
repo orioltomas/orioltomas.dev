@@ -46,7 +46,14 @@ declared once in `astro.config.mjs` (`i18n.defaultLocale`) and once in `src/data
 `hreflang="x-default"` points at the English page on purpose: a visitor whose language
 matches neither should land on English, not Catalan.
 
-## Deploying to Cloudflare Pages
+## Deploying to Cloudflare
+
+The site is deployed as a **Worker serving static assets** (not a Pages project).
+`wrangler.jsonc` holds the deploy settings; `name` there must keep matching the
+existing Worker, or a push creates a second one.
+
+`assets.not_found_handling` is set to `404-page`. Without it, Workers answers an
+unmatched route with an empty 404 body rather than `dist/404.html`.
 
 Connect the repository in the Cloudflare dashboard, then:
 
