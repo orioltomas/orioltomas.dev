@@ -100,7 +100,7 @@ const en: Copy = {
     items: {
       aprenEnCalma: {
         blurb:
-          'Quiet games for children aged two to seven, learning letters, numbers, shapes and colours. No sounds, no rewards, no rush — deliberately the opposite of what most children’s apps do. A single page that installs like an app and keeps working with no connection.',
+          'Quiet games for children aged two to seven, learning letters, numbers, shapes and colours. No sounds, no rewards, no rush — deliberately the opposite of what most children’s apps do. A single HTML file with no dependencies, that installs like an app and keeps working with no connection.',
       },
     },
   },
@@ -205,7 +205,7 @@ const ca: Copy = {
     items: {
       aprenEnCalma: {
         blurb:
-          'Jocs tranquils per a infants de dos a set anys, per aprendre lletres, números, formes i colors. Sense sons, sense premis i sense presses — deliberadament el contrari del que fa la majoria d’aplicacions infantils. Una sola pàgina que s’instal·la com una app i segueix funcionant sense connexió.',
+          'Jocs tranquils per a infants de dos a set anys, per aprendre lletres, números, formes i colors. Sense sons, sense premis i sense presses — deliberadament el contrari del que fa la majoria d’aplicacions infantils. Un sol fitxer HTML sense cap dependència, que s’instal·la com una app i segueix funcionant sense connexió.',
       },
     },
   },
