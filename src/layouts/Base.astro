@@ -17,9 +17,13 @@ import { copy } from '../data/copy';
 
 interface Props {
   locale: Locale;
+  /** Overrides the site title; error pages carry their own. */
+  title?: string;
+  /** Error pages are not canonical anything and must not be indexed. */
+  noindex?: boolean;
 }
 
-const { locale } = Astro.props;
+const { locale, title, noindex = false } = Astro.props;
 const t = copy[locale];
 // Single source of truth for the domain: `site` in astro.config.mjs.
 const origin = Astro.site ?? new URL('https://orioltomas.dev');
@@ -49,13 +53,21 @@ const personLd = {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <title>{t.meta.title}</title>
+    <title>{title ?? t.meta.title}</title>
     <meta name="description" content={t.meta.description} />
-    <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="ca" href={new URL('/', origin).href} />
-    <link rel="alternate" hreflang="en" href={new URL('/en/', origin).href} />
-    <!-- Visitors whose language matches neither get English, not Catalan. -->
-    <link rel="alternate" hreflang="x-default" href={new URL('/en/', origin).href} />
+    {
+      noindex ? (
+        <meta name="robots" content="noindex" />
+      ) : (
+        <>
+          <link rel="canonical" href={canonical} />
+          <link rel="alternate" hreflang="ca" href={new URL('/', origin).href} />
+          <link rel="alternate" hreflang="en" href={new URL('/en/', origin).href} />
+          {/* Visitors whose language matches neither get English, not Catalan. */}
+          <link rel="alternate" hreflang="x-default" href={new URL('/en/', origin).href} />
+        </>
+      )
+    }
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta property="og:type" content="profile" />
     <meta property="og:title" content={t.meta.title} />

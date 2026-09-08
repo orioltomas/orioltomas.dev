@@ -1,0 +1,44 @@
+---
+import Base from '../layouts/Base.astro';
+import { copy } from '../data/copy';
+import { localePath, type Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = copy[locale];
+---
+
+<Base locale={locale} title={t.notFound.metaTitle} noindex>
+  <main class="shell lost" id="main">
+    <p class="kicker">{t.notFound.eyebrow}</p>
+    <h1>{t.notFound.title}</h1>
+    <p class="lost__back">
+      <a class="link" href={localePath[locale]}>{t.notFound.home}</a>
+    </p>
+  </main>
+</Base>
+
+<style>
+  .lost {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-block: clamp(70px, 18vh, 160px);
+  }
+
+  .lost h1 {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(34px, 7vw, 58px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+
+  .lost__back {
+    margin: 10px 0 0;
+  }
+</style>

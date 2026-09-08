@@ -19,6 +19,7 @@ export interface Copy {
   stack: { label: string; items: string }[];
   education: { label: string; quote: string; meta: string; degrees: string[] };
   footer: { talk: string; languages: string; note: string };
+  notFound: { metaTitle: string; eyebrow: string; title: string; home: string };
   ui: { theme: string; lang: string; skip: string; emailFallback: string };
 }
 
@@ -100,6 +101,12 @@ const en: Copy = {
     talk: 'Get in touch',
     languages: 'Catalan · Spanish · English (FCE)',
     note: 'Built with Astro. No trackers, no cookies.',
+  },
+  notFound: {
+    metaTitle: 'Page not found — Oriol Tomàs Fortuny',
+    eyebrow: 'Error 404',
+    title: 'This page does not exist',
+    home: 'Back to the start',
   },
   ui: {
     theme: 'Switch between light and dark',
@@ -187,6 +194,12 @@ const ca: Copy = {
     talk: 'Parlem',
     languages: 'Català · Castellà · Anglès (FCE)',
     note: 'Fet amb Astro. Sense rastrejadors ni galetes.',
+  },
+  notFound: {
+    metaTitle: 'Pàgina no trobada — Oriol Tomàs Fortuny',
+    eyebrow: 'Error 404',
+    title: 'Aquesta pàgina no existeix',
+    home: 'Torna a l’inici',
   },
   ui: {
     theme: 'Canvia entre clar i fosc',
