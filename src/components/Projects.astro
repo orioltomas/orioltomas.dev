@@ -31,12 +31,14 @@ const t = copy[locale];
 
           <p class="project__links">
             {project.url && (
-              <a class="link" href={project.url} rel="noopener">
+              <a class="link" href={project.url} target="_blank" rel="noopener">
                 {t.projects.open}
+                <span class="visually-hidden"> {t.ui.newTab}</span>
               </a>
             )}
-            <a class="link" href={project.repo} rel="noopener">
+            <a class="link" href={project.repo} target="_blank" rel="noopener">
               {t.projects.code}
+              <span class="visually-hidden"> {t.ui.newTab}</span>
             </a>
           </p>
         </div>

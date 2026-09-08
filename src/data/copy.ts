@@ -26,7 +26,7 @@ export interface Copy {
   education: { label: string; quote: string; meta: string; degrees: string[] };
   footer: { talk: string; languages: string; note: string };
   notFound: { metaTitle: string; eyebrow: string; title: string; home: string };
-  ui: { theme: string; lang: string; skip: string; emailFallback: string };
+  ui: { theme: string; lang: string; skip: string; emailFallback: string; newTab: string };
 }
 
 const en: Copy = {
@@ -130,6 +130,7 @@ const en: Copy = {
     lang: 'Llegeix-ho en català',
     skip: 'Skip to content',
     emailFallback: 'oriol [at] tomasfortuny [dot] com',
+    newTab: '(opens in a new tab)',
   },
 };
 
@@ -234,6 +235,7 @@ const ca: Copy = {
     lang: 'Read it in English',
     skip: 'Ves al contingut',
     emailFallback: 'oriol [at] tomasfortuny [punt] com',
+    newTab: '(s’obre en una pestanya nova)',
   },
 };
 
