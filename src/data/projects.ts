@@ -20,6 +20,7 @@ export const projects: Project[] = [
     name: 'Aprèn en Calma',
     year: '2026',
     repo: 'https://github.com/orioltomas/apren-en-calma',
+    url: 'https://orioltomas.github.io/apren-en-calma/',
     // Tags are shown in both languages, so they stay language-neutral.
     tags: ['PWA', 'JavaScript', 'Service Worker', 'Offline'],
   },
