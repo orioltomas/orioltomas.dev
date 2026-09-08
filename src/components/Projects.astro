@@ -1,0 +1,125 @@
+---
+import { copy } from '../data/copy';
+import { projects } from '../data/projects';
+import type { Locale } from '../data/site';
+
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+const t = copy[locale];
+---
+
+<section class="section" id="projects">
+  <h2 class="section__title">{t.sections.projects}</h2>
+  <p class="projects__lede">{t.projects.lede}</p>
+
+  {
+    projects.map((project) => (
+      <article class="project">
+        <p class="project__year">{project.year}</p>
+
+        <div>
+          <h3 class="project__name">{project.name}</h3>
+          <p class="project__blurb">{t.projects.items[project.id].blurb}</p>
+
+          <ul class="project__tags">
+            {project.tags.map((tag) => (
+              <li>{tag}</li>
+            ))}
+          </ul>
+
+          <p class="project__links">
+            {project.url && (
+              <a class="link" href={project.url} rel="noopener">
+                {t.projects.open}
+              </a>
+            )}
+            <a class="link" href={project.repo} rel="noopener">
+              {t.projects.code}
+            </a>
+          </p>
+        </div>
+      </article>
+    ))
+  }
+</section>
+
+<style>
+  .projects__lede {
+    margin: -6px 0 4px;
+    max-width: var(--measure);
+    color: var(--mid);
+    font-size: 14.5px;
+  }
+
+  .project {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px 26px;
+    padding-block: 22px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .project__year {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--mid);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .project__name {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(23px, 3.4vw, 28px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  .project__blurb {
+    margin: 10px 0 0;
+    max-width: var(--measure);
+    font-size: 14.5px;
+    color: var(--mid);
+  }
+
+  .project__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    margin: 13px 0 0;
+    padding: 0;
+  }
+
+  .project__tags li {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--mid);
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    padding: 2px 8px;
+  }
+
+  .project__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin: 16px 0 0;
+  }
+
+  @media (min-width: 640px) {
+    .project {
+      grid-template-columns: var(--gutter) 1fr;
+    }
+    .project__year {
+      padding-top: 6px;
+    }
+    .projects__lede {
+      padding-left: calc(var(--gutter) + 26px);
+    }
+  }
+</style>

@@ -3,7 +3,7 @@ import type { Locale } from './site';
 export interface Copy {
   htmlLang: string;
   meta: { title: string; description: string };
-  nav: { work: string; stack: string; education: string; contact: string };
+  nav: { work: string; projects: string; stack: string; education: string; contact: string };
   hero: {
     kicker: string;
     role: string;
@@ -12,11 +12,17 @@ export interface Copy {
     cv: string;
     mail: string;
   };
-  sections: { work: string; stack: string; education: string; contact: string };
+  sections: { work: string; projects: string; stack: string; education: string; contact: string };
   present: string;
   current: string;
   jobs: Record<string, { meta: string; blurb: string; roles: Record<string, string> }>;
   stack: { label: string; items: string }[];
+  projects: {
+    lede: string;
+    code: string;
+    open: string;
+    items: Record<string, { blurb: string }>;
+  };
   education: { label: string; quote: string; meta: string; degrees: string[] };
   footer: { talk: string; languages: string; note: string };
   notFound: { metaTitle: string; eyebrow: string; title: string; home: string };
@@ -30,7 +36,7 @@ const en: Copy = {
     description:
       'Frontend Tech Lead at PDPAOLA in Barcelona. Ten years building for the web, from PHP and Symfony to Nuxt, TypeScript and GraphQL.',
   },
-  nav: { work: 'Work', stack: 'Stack', education: 'Education', contact: 'Contact' },
+  nav: { work: 'Work', projects: 'Projects', stack: 'Stack', education: 'Education', contact: 'Contact' },
   hero: {
     kicker: 'Barcelona · Hybrid · Ten years building for the web',
     role: 'Frontend Tech Lead at PDPAOLA.',
@@ -40,7 +46,7 @@ const en: Copy = {
     cv: 'Download CV',
     mail: 'Write to me',
   },
-  sections: { work: 'Work', stack: 'Stack', education: 'Education', contact: 'Get in touch' },
+  sections: { work: 'Work', projects: 'Projects', stack: 'Stack', education: 'Education', contact: 'Get in touch' },
   present: 'Present',
   current: 'Current',
   jobs: {
@@ -87,6 +93,17 @@ const en: Copy = {
     },
     { label: 'Earlier', items: 'Pimcore · Drupal · Python & Django · Server configuration' },
   ],
+  projects: {
+    lede: 'Things I build outside work, mostly to answer a question I could not find a good answer to.',
+    code: 'Code',
+    open: 'Open it',
+    items: {
+      aprenEnCalma: {
+        blurb:
+          'Quiet games for children aged two to seven, learning letters, numbers, shapes and colours. No sounds, no rewards, no rush — deliberately the opposite of what most children’s apps do. A single page that installs like an app and keeps working with no connection.',
+      },
+    },
+  },
   education: {
     label: 'Final degree project · Music Technology Group · UPF',
     quote:
@@ -123,7 +140,7 @@ const ca: Copy = {
     description:
       'Frontend Tech Lead a PDPAOLA, Barcelona. Deu anys fent web, del PHP i Symfony al Nuxt, TypeScript i GraphQL.',
   },
-  nav: { work: 'Trajectòria', stack: 'Stack', education: 'Formació', contact: 'Contacte' },
+  nav: { work: 'Trajectòria', projects: 'Projectes', stack: 'Stack', education: 'Formació', contact: 'Contacte' },
   hero: {
     kicker: 'Barcelona · Híbrid · Deu anys fent web',
     role: 'Frontend Tech Lead a PDPAOLA.',
@@ -133,7 +150,7 @@ const ca: Copy = {
     cv: 'Descarrega el CV',
     mail: 'Escriu-me',
   },
-  sections: { work: 'Trajectòria', stack: 'Stack', education: 'Formació', contact: 'Parlem' },
+  sections: { work: 'Trajectòria', projects: 'Projectes', stack: 'Stack', education: 'Formació', contact: 'Parlem' },
   present: 'Actualitat',
   current: 'Actual',
   jobs: {
@@ -180,6 +197,17 @@ const ca: Copy = {
     },
     { label: 'Abans', items: 'Pimcore · Drupal · Python i Django · Configuració de servidors' },
   ],
+  projects: {
+    lede: 'Coses que faig fora de la feina, gairebé sempre per respondre una pregunta que no trobava ben resolta.',
+    code: 'Codi',
+    open: 'Obre’l',
+    items: {
+      aprenEnCalma: {
+        blurb:
+          'Jocs tranquils per a infants de dos a set anys, per aprendre lletres, números, formes i colors. Sense sons, sense premis i sense presses — deliberadament el contrari del que fa la majoria d’aplicacions infantils. Una sola pàgina que s’instal·la com una app i segueix funcionant sense connexió.',
+      },
+    },
+  },
   education: {
     label: 'Treball Final de Grau · Music Technology Group · UPF',
     quote:

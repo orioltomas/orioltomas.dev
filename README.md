@@ -16,14 +16,20 @@ npm run preview  # serve the build locally
 | --- | --- |
 | `src/data/site.ts` | Domain, email parts, GitHub and LinkedIn URLs, locale routing |
 | `src/data/cv.ts` | Dates, companies and tags — the facts, language-independent |
+| `src/data/projects.ts` | Personal projects: name, year, repo, optional live URL, tags |
 | `src/data/copy.ts` | Every readable string, in `en` and `ca` |
 | `src/styles/global.css` | Design tokens, both themes, print stylesheet |
-| `src/components/` | Nav, Hero, Work, Stack, Education, Contact |
+| `src/components/` | Nav, Hero, Work, Projects, Stack, Education, Contact |
 | `src/pages/index.astro` | Catalan, served at `/` |
 | `src/pages/en/index.astro` | English, served at `/en/` |
 
 To edit the CV, touch `cv.ts` (dates) and `copy.ts` (words). The components do not
 contain content.
+
+Adding a project takes an entry in `projects.ts` and a matching `blurb` under
+`projects.items` in both languages of `copy.ts`. Tags render in both languages, so keep
+them to names that read the same either way. Omit `url` until the project is deployed —
+the entry then links only to its code, never to a dead demo.
 
 ## Themes
 
