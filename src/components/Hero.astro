@@ -1,6 +1,7 @@
 ---
 import Email from './Email.astro';
 import { copy } from '../data/copy';
+import { site } from '../data/site';
 import type { Locale } from '../data/site';
 
 interface Props {
@@ -13,12 +14,10 @@ const t = copy[locale];
 <header class="hero">
   <p class="kicker">{t.hero.kicker}</p>
 
-  <h1 class="hero__name">
-    Oriol Tomàs<br /><em>Fortuny</em>
-  </h1>
+  <h1 class="hero__name">{site.name}</h1>
 
   <p class="hero__role">
-    {t.hero.role} <span>{t.hero.roleTail}</span>
+    <b>{t.hero.role}</b> <span>{t.hero.roleTail}</span>
   </p>
 
   <p class="hero__intro">{t.hero.intro}</p>
@@ -41,21 +40,23 @@ const t = copy[locale];
   .hero__name {
     font-family: var(--serif);
     font-weight: 300;
-    font-size: clamp(46px, 11vw, 96px);
-    line-height: 0.94;
+    font-size: clamp(38px, 8.4vw, 76px);
+    line-height: 1.02;
     letter-spacing: -0.028em;
+    text-wrap: balance;
     margin: 0;
-  }
-
-  .hero__name em {
-    font-style: italic;
-    color: var(--accent);
   }
 
   .hero__role {
     margin: 0;
     font-size: clamp(16.5px, 2.2vw, 19px);
-    max-width: 40ch;
+    max-width: 48ch;
+    text-wrap: pretty;
+  }
+
+  .hero__role b {
+    font-weight: 500;
+    color: var(--accent);
   }
 
   .hero__role span {
