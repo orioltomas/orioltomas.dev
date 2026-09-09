@@ -147,7 +147,7 @@ const ca: Copy = {
     role: 'Frontend Tech Lead a PDPAOLA.',
     roleTail: 'Vaig començar al backend i he acabat liderant el front d’un ecommerce de joieria.',
     intro:
-      'El PHP i el Symfony em van ensenyar a construir coses que aguanten. Ara treballo amb Nuxt i TypeScript al front, Laravel i GraphQL al back, i MongoDB i RabbitMQ quan el volum ho demana. La resta de la feina no queda al repositori: decidir l’arquitectura, revisar codi i fomentar l’autonomia de l’equip.',
+      'PHP i Symfony em van ensenyar a construir coses que aguanten. Ara treballo amb Nuxt i TypeScript al front, Laravel i GraphQL al back, i MongoDB i RabbitMQ quan el volum ho demana. La resta de la feina no queda al repositori: decidir l’arquitectura, revisar codi i fomentar l’autonomia de l’equip.',
     cv: 'Descarrega el CV',
     mail: 'Escriu-me',
   },
