@@ -34,7 +34,7 @@ const en: Copy = {
   meta: {
     title: 'Oriol Tomàs Fortuny — Frontend Tech Lead',
     description:
-      'Frontend Tech Lead at PDPAOLA in Barcelona. Ten years building for the web, from PHP and Symfony to Nuxt, TypeScript and GraphQL — and leading the team.',
+      'Frontend Tech Lead at PDPAOLA in Barcelona. Nuxt and TypeScript over Laravel and GraphQL, after years of PHP and Symfony, and the technical leadership of the team.',
   },
   nav: { work: 'Work', projects: 'Projects', stack: 'Stack', education: 'Education', contact: 'Contact' },
   hero: {
@@ -42,7 +42,7 @@ const en: Copy = {
     role: 'Frontend Tech Lead at PDPAOLA.',
     roleTail: 'I came in through the backend and ended up leading the front of a jewelry ecommerce.',
     intro:
-      'PHP and Symfony taught me to build things that hold up. These days it’s Nuxt and TypeScript at the front, Laravel and GraphQL behind them, and MongoDB and RabbitMQ when the volume calls for it. The rest of the job never lands in a repository: architecture decisions, code review, and leaving the team autonomous enough to keep moving without me.',
+      'PHP and Symfony taught me to build things that hold up. These days it’s Nuxt and TypeScript on the front, Laravel and GraphQL on the back, and MongoDB and RabbitMQ when the volume calls for it. The rest of the job never lands in a repository: deciding the architecture, reviewing code, and growing the team’s autonomy.',
     cv: 'Download CV',
     mail: 'Write to me',
   },
@@ -139,7 +139,7 @@ const ca: Copy = {
   meta: {
     title: 'Oriol Tomàs Fortuny — Frontend Tech Lead',
     description:
-      'Frontend Tech Lead a PDPAOLA, Barcelona. Deu anys fent web, del PHP i Symfony al Nuxt, TypeScript i GraphQL — i liderant l’equip.',
+      'Frontend Tech Lead a PDPAOLA, Barcelona. Nuxt i TypeScript sobre Laravel i GraphQL, després d’anys de PHP i Symfony, i el lideratge tècnic de l’equip.',
   },
   nav: { work: 'Trajectòria', projects: 'Projectes', stack: 'Stack', education: 'Formació', contact: 'Contacte' },
   hero: {
@@ -147,7 +147,7 @@ const ca: Copy = {
     role: 'Frontend Tech Lead a PDPAOLA.',
     roleTail: 'Vaig començar al backend i he acabat liderant el front d’un ecommerce de joieria.',
     intro:
-      'El PHP i el Symfony em van ensenyar a construir coses que aguanten. Ara treballo amb Nuxt i TypeScript al davant, Laravel i GraphQL al darrere, i MongoDB i RabbitMQ quan el volum ho demana. La resta de la feina no queda al repositori: decisions d’arquitectura, revisió de codi i deixar l’equip prou autònom per avançar sense mi.',
+      'El PHP i el Symfony em van ensenyar a construir coses que aguanten. Ara treballo amb Nuxt i TypeScript al front, Laravel i GraphQL al back, i MongoDB i RabbitMQ quan el volum ho demana. La resta de la feina no queda al repositori: decidir l’arquitectura, revisar codi i fomentar l’autonomia de l’equip.',
     cv: 'Descarrega el CV',
     mail: 'Escriu-me',
   },
