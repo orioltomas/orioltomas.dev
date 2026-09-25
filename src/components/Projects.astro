@@ -36,10 +36,12 @@ const t = copy[locale];
                 <span class="visually-hidden"> {t.ui.newTab}</span>
               </a>
             )}
-            <a class="link" href={project.repo} target="_blank" rel="noopener">
-              {t.projects.code}
-              <span class="visually-hidden"> {t.ui.newTab}</span>
-            </a>
+            {project.repo && (
+              <a class="link" href={project.repo} target="_blank" rel="noopener">
+                {t.projects.code}
+                <span class="visually-hidden"> {t.ui.newTab}</span>
+              </a>
+            )}
           </p>
         </div>
       </article>
@@ -49,7 +51,7 @@ const t = copy[locale];
 
 <style>
   .projects__lede {
-    margin: -6px 0 4px;
+    margin: -6px 0 22px;
     max-width: var(--measure);
     color: var(--mid);
     font-size: 14.5px;
@@ -93,7 +95,7 @@ const t = copy[locale];
     flex-wrap: wrap;
     gap: 6px;
     list-style: none;
-    margin: 13px 0 0;
+    margin: 16px 0 0;
     padding: 0;
   }
 

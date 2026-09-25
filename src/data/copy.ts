@@ -98,6 +98,10 @@ const en: Copy = {
     code: 'Code',
     open: 'Open it',
     items: {
+      vincleStudio: {
+        blurb:
+          'A static, bilingual site for an architecture studio: content collections instead of a CMS, and a build that fails on purpose if a page is missing its translation, so the site can never end up half in Catalan and half in Spanish. No client-side framework, no analytics or cookies, and every photograph ships as build-time AVIF with sized fallbacks, so nothing shifts while it loads.',
+      },
       aprenEnCalma: {
         blurb:
           'Quiet games for children aged two to seven, learning letters, numbers, shapes and colours. No sounds, no rewards, no rush — deliberately the opposite of what most children’s apps do. A single HTML file with no dependencies, that installs like an app and keeps working with no connection.',
@@ -203,6 +207,10 @@ const ca: Copy = {
     code: 'Codi',
     open: 'Obre’l',
     items: {
+      vincleStudio: {
+        blurb:
+          'Un web estàtic i bilingüe per a un estudi d’arquitectura: col·leccions de contingut en lloc d’un CMS, i un build que falla a posta si a una pàgina li falta la traducció, perquè el web no pugui acabar mig en català i mig en castellà. Sense framework al client, sense analítica ni cookies, i cada fotografia es genera en build com a AVIF amb mides fixades, perquè res es mogui mentre carrega.',
+      },
       aprenEnCalma: {
         blurb:
           'Jocs tranquils per a infants de dos a set anys, per aprendre lletres, números, formes i colors. Sense sons, sense premis i sense presses — deliberadament el contrari del que fa la majoria d’aplicacions infantils. Un sol fitxer HTML sense cap dependència, que s’instal·la com una app i segueix funcionant sense connexió.',
