@@ -182,7 +182,9 @@ a {
   }
   .section {
     padding-block: 18pt 0;
-    break-inside: avoid;
+  }
+  .section__title {
+    break-after: avoid;
   }
   .job {
     break-inside: avoid;

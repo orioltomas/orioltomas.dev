@@ -1,7 +1,7 @@
 ---
 import Email from './Email.astro';
 import { copy } from '../data/copy';
-import { site } from '../data/site';
+import { site, localePath } from '../data/site';
 import type { Locale } from '../data/site';
 
 interface Props {
@@ -9,6 +9,7 @@ interface Props {
 }
 const { locale } = Astro.props;
 const t = copy[locale];
+const cvHref = `${localePath[locale]}cv.pdf`;
 ---
 
 <header class="hero">
@@ -23,7 +24,7 @@ const t = copy[locale];
   <p class="hero__intro">{t.hero.intro}</p>
 
   <div class="hero__cta no-print">
-    <button class="btn" type="button" data-print>{t.hero.cv}</button>
+    <a class="btn" href={cvHref} download="oriol-tomas-cv.pdf">{t.hero.cv}</a>
     <Email locale={locale} class="btn btn--ghost" />
   </div>
 </header>
@@ -77,9 +78,3 @@ const t = copy[locale];
     margin-top: 6px;
   }
 </style>
-
-<script>
-  document
-    .querySelector<HTMLButtonElement>('[data-print]')
-    ?.addEventListener('click', () => window.print());
-</script>

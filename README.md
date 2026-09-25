@@ -39,9 +39,21 @@ value before first paint so the page never flashes the wrong theme.
 
 ## The CV download
 
-"Download CV" opens the browser's print dialog against the print stylesheet in
-`global.css` — navigation, buttons and the footer note drop out, links print their URLs.
-There is no separate PDF file to keep in sync.
+"Download CV" links straight to a static `cv.pdf` (`/cv.pdf` in Catalan, `/en/cv.pdf` in
+English) checked into `public/`. It is rendered from the live page through the print
+stylesheet in `global.css` — navigation, buttons and the footer note drop out, links
+print their URLs — so it always matches what `window.print()` would produce.
+
+Cloudflare's build container can't run a real browser, so the PDFs are generated
+locally, not at build time. After editing `cv.ts` or `copy.ts`, run:
+
+```bash
+astro dev --background
+npm run cv:pdf
+```
+
+and commit the regenerated `public/cv.pdf` and `public/en/cv.pdf` alongside the content
+change.
 
 ## Languages
 
