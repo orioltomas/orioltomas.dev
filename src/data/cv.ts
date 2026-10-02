@@ -29,7 +29,7 @@ export const jobs: Job[] = [
       { id: 'ecommerceLead', from: '2023-09', to: '2025-12' },
       { id: 'fullstack', from: '2021-08', to: '2023-09' },
     ],
-    tags: ['Nuxt', 'TypeScript', 'Laravel', 'GraphQL', 'RabbitMQ', 'MongoDB', 'Tech leadership'],
+    tags: ['Nuxt', 'TypeScript', 'PHP', 'Laravel', 'GraphQL', 'RabbitMQ', 'MongoDB', 'Tech leadership'],
   },
   {
     id: 'dgtls',
@@ -61,7 +61,7 @@ export const jobs: Job[] = [
   },
 ];
 
-const intlLocale: Record<Locale, string> = { en: 'en-GB', ca: 'ca-ES' };
+const intlLocale: Record<Locale, string> = { en: 'en-GB', ca: 'ca-ES', es: 'es-ES' };
 
 /** `2025-12` → `Dec 2025` / `des. 2025`. */
 export function formatMonth(month: Month, locale: Locale): string {

@@ -8,13 +8,10 @@ export const site = {
   linkedin: 'https://www.linkedin.com/in/oriol-tom%C3%A0s-fortuny-938506124',
 } as const;
 
-export const locales = ['ca', 'en'] as const;
+export const locales = ['ca', 'en', 'es'] as const;
 export type Locale = (typeof locales)[number];
 
-/** Path of the current page in the other language. */
-export const altLocale: Record<Locale, { locale: Locale; path: string; label: string }> = {
-  ca: { locale: 'en', path: '/en/', label: 'EN' },
-  en: { locale: 'ca', path: '/', label: 'CA' },
-};
+export const localePath: Record<Locale, string> = { ca: '/', en: '/en/', es: '/es/' };
 
-export const localePath: Record<Locale, string> = { ca: '/', en: '/en/' };
+/** Endonyms, for the language switcher — shown regardless of the current locale. */
+export const languageNames: Record<Locale, string> = { ca: 'Català', en: 'English', es: 'Español' };

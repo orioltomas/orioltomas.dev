@@ -53,7 +53,7 @@ const en: Copy = {
     pdpaola: {
       meta: 'Barcelona · Hybrid · 5 yrs 2 mos',
       blurb:
-        'Technical leadership of the ecommerce team and, since the end of 2025, of the frontend chapter: architecture, code review, priorities and mentoring. A Nuxt and TypeScript storefront over a Laravel and GraphQL backend, with RabbitMQ and MongoDB underneath. Before that, fullstack work on the shop itself.',
+        'Technical leadership of the ecommerce team and, since the end of 2025, of the frontend chapter: architecture, code review, priorities and mentoring. Hands-on, fullstack work across the whole stack: a Nuxt and TypeScript storefront and a PHP, Laravel and GraphQL backend, with RabbitMQ and MongoDB underneath.',
       roles: {
         frontendLead: 'Frontend Tech Lead',
         ecommerceLead: 'Ecommerce Tech Lead',
@@ -131,7 +131,7 @@ const en: Copy = {
   },
   ui: {
     theme: 'Switch between light and dark',
-    lang: 'Llegeix-ho en català',
+    lang: 'Change language',
     skip: 'Skip to content',
     emailFallback: 'oriol [at] tomasfortuny [dot] com',
     newTab: '(opens in a new tab)',
@@ -162,7 +162,7 @@ const ca: Copy = {
     pdpaola: {
       meta: 'Barcelona · Híbrid · 5 anys 2 mesos',
       blurb:
-        'Lideratge tècnic de l’equip d’ecommerce i, des del final del 2025, del capítol de frontend: arquitectura, revisió de codi, prioritats i acompanyament de l’equip. Un storefront amb Nuxt i TypeScript sobre un backend de Laravel i GraphQL, amb RabbitMQ i MongoDB a sota. Abans, feina fullstack sobre la mateixa botiga.',
+        'Lideratge tècnic de l’equip d’ecommerce i, des del final del 2025, del capítol de frontend: arquitectura, revisió de codi, prioritats i acompanyament de l’equip. Feina fullstack real sobre tot l’stack: un storefront amb Nuxt i TypeScript i un backend de PHP, Laravel i GraphQL, amb RabbitMQ i MongoDB a sota.',
       roles: {
         frontendLead: 'Frontend Tech Lead',
         ecommerceLead: 'Ecommerce Tech Lead',
@@ -240,11 +240,120 @@ const ca: Copy = {
   },
   ui: {
     theme: 'Canvia entre clar i fosc',
-    lang: 'Read it in English',
+    lang: 'Canvia d’idioma',
     skip: 'Ves al contingut',
     emailFallback: 'oriol [at] tomasfortuny [punt] com',
     newTab: '(s’obre en una pestanya nova)',
   },
 };
 
-export const copy: Record<Locale, Copy> = { en, ca };
+const es: Copy = {
+  htmlLang: 'es',
+  meta: {
+    title: 'Oriol Tomàs Fortuny — Frontend Tech Lead',
+    description:
+      'Frontend Tech Lead en PDPAOLA, Barcelona. Nuxt y TypeScript sobre Laravel y GraphQL, después de años de PHP y Symfony, y el liderazgo técnico del equipo.',
+  },
+  nav: { work: 'Trayectoria', projects: 'Proyectos', stack: 'Stack', education: 'Formación', contact: 'Contacto' },
+  hero: {
+    kicker: 'Barcelona · Diez años construyendo para la web',
+    role: 'Frontend Tech Lead en PDPAOLA.',
+    roleTail: 'Empecé por el backend y acabé liderando el frontend de un ecommerce de joyería.',
+    intro:
+      'PHP y Symfony me enseñaron a construir cosas que aguantan. Ahora trabajo con Nuxt y TypeScript en el front, Laravel y GraphQL en el back, y MongoDB y RabbitMQ cuando el volumen lo pide. El resto del trabajo nunca llega al repositorio: decidir la arquitectura, revisar código y hacer crecer la autonomía del equipo.',
+    cv: 'Descargar CV',
+    mail: 'Escríbeme',
+  },
+  sections: { work: 'Trayectoria', projects: 'Proyectos', stack: 'Stack', education: 'Formación', contact: 'Hablemos' },
+  present: 'Actualidad',
+  current: 'Actual',
+  jobs: {
+    pdpaola: {
+      meta: 'Barcelona · Híbrido · 5 años 2 meses',
+      blurb:
+        'Liderazgo técnico del equipo de ecommerce y, desde finales de 2025, del capítulo de frontend: arquitectura, revisión de código, prioridades y acompañamiento del equipo. Trabajo fullstack real sobre todo el stack: un storefront con Nuxt y TypeScript y un backend de PHP, Laravel y GraphQL, con RabbitMQ y MongoDB debajo.',
+      roles: {
+        frontendLead: 'Frontend Tech Lead',
+        ecommerceLead: 'Ecommerce Tech Lead',
+        fullstack: 'Desarrollador web fullstack',
+      },
+    },
+    dgtls: {
+      meta: '2 años 3 meses',
+      blurb:
+        'Desarrollo back y front con Pimcore, una plataforma basada en Symfony, en proyectos de agencia — además de configurar y mantener los servidores donde se alojaban. Equipo distribuido, con la central en Alemania.',
+      roles: { fullstack: 'Desarrollador web fullstack' },
+    },
+    eina: {
+      meta: '1 año 1 mes',
+      blurb:
+        'Nuevas funcionalidades y mantenimiento de proyectos Symfony, trabajando en Scrum con un equipo ya consolidado.',
+      roles: { seniorBackend: 'Desarrollador backend sénior' },
+    },
+    bebop: {
+      meta: '7 meses',
+      blurb: 'Una aplicación web de gestión interna y varias landings, con Drupal y PHP.',
+      roles: { backend: 'Desarrollador backend' },
+    },
+    opendrako: {
+      meta: '3 meses',
+      blurb: 'Una aplicación web de gestión académica, hecha con Symfony2 sobre MySQL.',
+      roles: { backend: 'Desarrollador backend' },
+    },
+  },
+  stack: [
+    { label: 'Frontend', items: 'Nuxt · Vue.js · TypeScript · JavaScript · HTML y CSS' },
+    { label: 'Backend', items: 'PHP · Laravel · GraphQL · Symfony' },
+    { label: 'Datos y colas', items: 'MongoDB · MySQL · RabbitMQ' },
+    {
+      label: 'Liderazgo',
+      items: 'Liderazgo técnico · Gestión de deuda técnica · Roadmap técnico · Scrum',
+    },
+    { label: 'Antes', items: 'Pimcore · Drupal · Python y Django · Configuración de servidores' },
+  ],
+  projects: {
+    lede: 'Cosas que hago fuera del trabajo, casi siempre para responder una pregunta que no encontraba bien resuelta.',
+    code: 'Código',
+    open: 'Ábrelo',
+    items: {
+      vincleStudio: {
+        blurb:
+          'Un sitio estático y bilingüe para un estudio de arquitectura: colecciones de contenido en lugar de un CMS, y un build que falla a propósito si a una página le falta la traducción, para que el sitio nunca acabe mitad en catalán y mitad en castellano. Sin framework en el cliente, sin analítica ni cookies, y cada fotografía se genera en build como AVIF con tamaños fijados, para que nada se mueva mientras carga.',
+      },
+      aprenEnCalma: {
+        blurb:
+          'Juegos tranquilos para niños de dos a siete años, para aprender letras, números, formas y colores. Sin sonidos, sin premios y sin prisas — deliberadamente lo contrario de lo que hace la mayoría de aplicaciones infantiles. Un único archivo HTML sin dependencias, que se instala como una app y sigue funcionando sin conexión.',
+      },
+    },
+  },
+  education: {
+    label: 'Trabajo Final de Grado · Music Technology Group · UPF',
+    quote:
+      'Una aplicación web de recomendación musical pensada para personas con Alzheimer y para sus familiares y cuidadores, como apoyo a terapias musicales.',
+    meta: 'Lo interesante era aplicar herramientas nuevas en un terreno donde raramente llegan: la salud.',
+    degrees: [
+      'Ingeniería Informática — Universitat Pompeu Fabra, 2012–2017',
+      'Ingeniería Informática — Universitat Politècnica de Catalunya, 2010–2012',
+    ],
+  },
+  footer: {
+    talk: 'Hablemos',
+    languages: 'Catalán · Castellano · Inglés (FCE)',
+    note: 'Hecho con Astro. Sin rastreadores, sin cookies.',
+  },
+  notFound: {
+    metaTitle: 'Página no encontrada — Oriol Tomàs Fortuny',
+    eyebrow: 'Error 404',
+    title: 'Esta página no existe',
+    home: 'Volver al inicio',
+  },
+  ui: {
+    theme: 'Cambia entre claro y oscuro',
+    lang: 'Cambiar de idioma',
+    skip: 'Ir al contenido',
+    emailFallback: 'oriol [en] tomasfortuny [punto] com',
+    newTab: '(se abre en una pestaña nueva)',
+  },
+};
+
+export const copy: Record<Locale, Copy> = { en, ca, es };

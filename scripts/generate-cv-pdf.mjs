@@ -15,7 +15,7 @@ import { fileURLToPath } from 'node:url';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const devServer = process.env.DEV_SERVER_URL ?? 'http://localhost:4321';
-const locales = { ca: '/', en: '/en/' };
+const locales = { ca: '/', en: '/en/', es: '/es/' };
 
 const chromeCandidates = [
   process.env.CHROME_PATH,

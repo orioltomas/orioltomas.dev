@@ -28,6 +28,7 @@ const t = copy[locale];
 // Single source of truth for the domain: `site` in astro.config.mjs.
 const origin = Astro.site ?? new URL('https://orioltomas.dev');
 const canonical = new URL(localePath[locale], origin).href;
+const ogLocale: Record<Locale, string> = { ca: 'ca_ES', en: 'en_GB', es: 'es_ES' };
 
 const personLd = {
   '@context': 'https://schema.org',
@@ -63,7 +64,8 @@ const personLd = {
           <link rel="canonical" href={canonical} />
           <link rel="alternate" hreflang="ca" href={new URL('/', origin).href} />
           <link rel="alternate" hreflang="en" href={new URL('/en/', origin).href} />
-          {/* Visitors whose language matches neither get English, not Catalan. */}
+          <link rel="alternate" hreflang="es" href={new URL('/es/', origin).href} />
+          {/* Visitors whose language matches none of these get English, not Catalan. */}
           <link rel="alternate" hreflang="x-default" href={new URL('/en/', origin).href} />
         </>
       )
@@ -73,7 +75,7 @@ const personLd = {
     <meta property="og:title" content={t.meta.title} />
     <meta property="og:description" content={t.meta.description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:locale" content={locale === 'ca' ? 'ca_ES' : 'en_GB'} />
+    <meta property="og:locale" content={ogLocale[locale]} />
     <meta name="twitter:card" content="summary" />
     <script type="application/ld+json" set:html={JSON.stringify(personLd)} />
     <script is:inline>

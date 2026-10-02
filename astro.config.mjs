@@ -15,9 +15,10 @@ export default defineConfig({
   // 'directory' would bury it in en/404/index.html, where it is never found.
   build: { format: 'preserve' },
   i18n: {
-    // Catalan is the primary language and lives at the root; English at /en/.
+    // Catalan is the primary language and lives at the root; English at
+    // /en/ and Spanish at /es/.
     defaultLocale: 'ca',
-    locales: ['ca', 'en'],
+    locales: ['ca', 'en', 'es'],
     routing: { prefixDefaultLocale: false },
   },
   integrations: [
