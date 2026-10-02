@@ -32,15 +32,15 @@ export interface Copy {
 const en: Copy = {
   htmlLang: 'en',
   meta: {
-    title: 'Oriol Tomàs Fortuny — Frontend Tech Lead',
+    title: 'Oriol Tomàs Fortuny — Fullstack Developer',
     description:
-      'Frontend Tech Lead at PDPAOLA in Barcelona. Nuxt and TypeScript over Laravel and GraphQL, after years of PHP and Symfony, and the technical leadership of the team.',
+      'Fullstack developer in Barcelona — PHP, Laravel and GraphQL on the backend, Nuxt and TypeScript on the front — currently Frontend Tech Lead at PDPAOLA.',
   },
   nav: { work: 'Work', projects: 'Projects', stack: 'Stack', education: 'Education', contact: 'Contact' },
   hero: {
     kicker: 'Barcelona · Ten years building for the web',
-    role: 'Frontend Tech Lead at PDPAOLA.',
-    roleTail: 'I came in through the backend and ended up leading the front of a jewelry ecommerce.',
+    role: 'Fullstack Developer.',
+    roleTail: 'As Frontend Tech Lead at PDPAOLA, I bring the fundamentals and practices I built on the backend to the front.',
     intro:
       'PHP and Symfony taught me to build things that hold up. These days it’s Nuxt and TypeScript on the front, Laravel and GraphQL on the back, and MongoDB and RabbitMQ when the volume calls for it. The rest of the job never lands in a repository: deciding the architecture, reviewing code, and growing the team’s autonomy.',
     cv: 'Download CV',
@@ -141,15 +141,15 @@ const en: Copy = {
 const ca: Copy = {
   htmlLang: 'ca',
   meta: {
-    title: 'Oriol Tomàs Fortuny — Frontend Tech Lead',
+    title: 'Oriol Tomàs Fortuny — Desenvolupador fullstack',
     description:
-      'Frontend Tech Lead a PDPAOLA, Barcelona. Nuxt i TypeScript sobre Laravel i GraphQL, després d’anys de PHP i Symfony, i el lideratge tècnic de l’equip.',
+      'Desenvolupador fullstack a Barcelona — PHP, Laravel i GraphQL al backend, Nuxt i TypeScript al front — actualment Frontend Tech Lead a PDPAOLA.',
   },
   nav: { work: 'Trajectòria', projects: 'Projectes', stack: 'Stack', education: 'Formació', contact: 'Contacte' },
   hero: {
     kicker: 'Barcelona · Deu anys fent web',
-    role: 'Frontend Tech Lead a PDPAOLA.',
-    roleTail: 'Vaig començar al backend i he acabat liderant el front d’un ecommerce de joieria.',
+    role: 'Desenvolupador fullstack.',
+    roleTail: 'Com a Frontend Tech Lead a PDPAOLA, aplico al front els fonaments i les bones pràctiques que vaig construir al backend.',
     intro:
       'PHP i Symfony em van ensenyar a construir coses que aguanten. Ara treballo amb Nuxt i TypeScript al front, Laravel i GraphQL al back, i MongoDB i RabbitMQ quan el volum ho demana. La resta de la feina no queda al repositori: decidir l’arquitectura, revisar codi i fomentar l’autonomia de l’equip.',
     cv: 'Descarrega el CV',
@@ -250,15 +250,15 @@ const ca: Copy = {
 const es: Copy = {
   htmlLang: 'es',
   meta: {
-    title: 'Oriol Tomàs Fortuny — Frontend Tech Lead',
+    title: 'Oriol Tomàs Fortuny — Desarrollador fullstack',
     description:
-      'Frontend Tech Lead en PDPAOLA, Barcelona. Nuxt y TypeScript sobre Laravel y GraphQL, después de años de PHP y Symfony, y el liderazgo técnico del equipo.',
+      'Desarrollador fullstack en Barcelona — PHP, Laravel y GraphQL en el backend, Nuxt y TypeScript en el front — actualmente Frontend Tech Lead en PDPAOLA.',
   },
   nav: { work: 'Trayectoria', projects: 'Proyectos', stack: 'Stack', education: 'Formación', contact: 'Contacto' },
   hero: {
     kicker: 'Barcelona · Diez años construyendo para la web',
-    role: 'Frontend Tech Lead en PDPAOLA.',
-    roleTail: 'Empecé por el backend y acabé liderando el frontend de un ecommerce de joyería.',
+    role: 'Desarrollador fullstack.',
+    roleTail: 'Como Frontend Tech Lead en PDPAOLA, aplico al frontend los fundamentos y las buenas prácticas que construí en el backend.',
     intro:
       'PHP y Symfony me enseñaron a construir cosas que aguantan. Ahora trabajo con Nuxt y TypeScript en el front, Laravel y GraphQL en el back, y MongoDB y RabbitMQ cuando el volumen lo pide. El resto del trabajo nunca llega al repositorio: decidir la arquitectura, revisar código y hacer crecer la autonomía del equipo.',
     cv: 'Descargar CV',
